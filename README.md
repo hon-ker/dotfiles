@@ -17,7 +17,8 @@
 
 
 
-我对Hyprland的评价是: **Hyprland,满足你对窗口管理器的所有期待**
+我对Hyprland的评价是:  **Hyprland,满足你对窗口管理器的所有期待(除却输入法)**
+
 
 # Usage
 
@@ -27,30 +28,57 @@
 
 ```bash
 .
-├── .config         # 配置文件
-│   ├── alacritty   # alacritty终端配置
-│   ├── dunst       # 桌面通知 配置
-│   ├── hypr        # Hyprland 配置
-│   ├── rofi        # rofi配置
-│   └── waybar      # 状态栏配置
-├── install.sh      # 安装packages脚本
-├── zsh.sh          # zsh初始化脚本(包含安装插件)
-└── README.md
+├── .config             # 核心配置
+│   ├── dunst           # 通知程序的样式
+│   ├── fcitx5          # fcitx5输入法的配置
+│   ├── nvim            # neovim编辑器的配置
+│   ├── pip             # pip清华源
+│   ├── alacritty       # alacritty终端配置
+│   ├── kitty           # kitty终端的配置
+│   ├── bspwm           # bspwm窗口管理器的配置
+│   ├── sxhkd           # bspwm的快捷键配置(和bspwm一起用)
+│   ├── polybar         # polybar状态栏的配置(和bspwm一起用)
+│   ├── rofi            # 程序菜单的配置
+│   ├── hypr            # hyprland的配置
+│   ├── swaylock        # 屏锁的配置(和Hyprland一起用)
+│   └── waybar          # waybar状态栏(和Hyprland一起用)
+├── etc                 # /etc下修改的部分配置
+│   ├── environment     # 输入法的配置
+│   ├── fonts           # 系统字体的修改
+│   │   ├── conf.d
+│   │   ├── fonts.conf
+│   │   └── local.conf
+│   ├── usr             # 主要是修改fcitx5默认中文"拼"字tray图标修改(默认太丑了)
+│   │   └── share
+│   └── X11             # 触控板轻触实现点击的配置
+│       └── xorg.conf.d
+├── install.sh          # 安装必要软件包的程序,所有包是针对Hyprland的,虽然配置里有bspwm但是install.sh里没有下载bspwm
+├── screenshot          # Hyprland的截图样式
+│   ├── dunst.jpg
+│   ├── neofetch.jpg
+│   ├── rofi.jpg
+│   └── waybar.png
+├── logo.txt            # logo(脚本的logo,不用管)
+├── zsh.sh              # oh-my-zsh主题自动下载常用插件和基础配置及美化
+└── README.md           # README
 ```
 
 **hypr目录**
 ```bash
-
 .config/hypr
-├── scripts
-│   └── toggle-waybar.sh    # 手动开关状态栏的脚本
-├── bg                      # 存壁纸的,为了防止配置文件太大,只放了两个
-│   ├── bg.jpg
+├── bg                      
 │   └── queen_medusa.jpg
-├── exec.conf               # 启动hyprland时自动启动的应用,如输入法,bg,waybar等
-├── hyprland.conf           # hyprland 主配置文件
+├── exec.conf               # hyprland启动时自动启动的程序
+├── hyprland.conf           # hyprland核心配置文件 
 ├── keybinds.conf           # 快捷键绑定
-└── starthypr.sh            # 直接从终端启动hyprland的脚本,也可以使用sddm不用这个
+├── scripts                 # 部分快捷键绑定的脚本
+│   ├── cpu.sh              # CPU占用率的TOP10
+│   ├── ip.sh               # 获取当前本机的内外内网IP,常用
+│   ├── memory.sh           # 获取占用内存TOP10
+│   ├── screenshot.sh       # 屏幕截屏
+│   ├── start-vmware.sh     # 没用,可删除
+│   └── toggle-waybar.sh    # 打开/关闭 waybar
+└── starthypr.sh            # 启动hyprland的脚本(设置很多环境变量,也可以直接使用Hyprland命令启动)
 ```
 
 
