@@ -38,8 +38,8 @@ cat <<EOF >> $HOME/.zshrc
 
 # PATH
 export EDITOR=nvim
-export TOOLS='/data/tools/'
-export DICTS="/data/tools/dicts" 
+export TOOLS='/tools/'
+export DICTS="/tools/dicts" 
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:~/.local/bin
 
 # system
@@ -49,9 +49,7 @@ alias ll='ls -l --color=auto'
 alias grep='grep --color=auto'
 alias gdd='cd ~/Downloads'
 alias gtt="cd $TOOLS"
-alias r="ranger --choosedir=/home/clay/.rangerdir; LASTDIR=; cd ''"
-alias active="source /home/clay/.venv/bin/activate"
-alias v="sudo systemctl start vmware-networks.service vmware-usbarbitrator.service && notify-send -u normal '成功启动服务' '1.vmware-networks\n2.vmware-usbartitrator服务' > /dev/null 2>&1"
+alias active="source $HOME/.venv/bin/activate"
 
 # tools工具
 alias antSword="$TOOLS/AntSword/AntSword"
@@ -67,6 +65,7 @@ alias ds_store_exp="python $TOOLS/ds_store_exp.py"
 # self
 alias cpu="$HOME/.config/hypr/scripts/cpu.sh"
 alias memory="$HOME/.config/hypr/scripts/memory.sh"
+alias hypr="$HOME/.config/hypr/starthypr.sh"
 
 EOF
 
