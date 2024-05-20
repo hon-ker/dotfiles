@@ -72,12 +72,15 @@ audio_packages["udev"]="Device manager for the Linux kernel"
 declare -A tools_packages
 tools_packages["google-chrome"]="Web browser developed by Google"
 tools_packages["telegram-desktop"]="Telegram Desktop messaging app"
-tools_packages["code"]="Visual Studio Code, a powerful code editor"
+tools_packages["visual-studio-code-bin"]="Visual Studio Code, a powerful code editor"
 tools_packages["v2raya"]="A simple V2Ray client for Linux"
 tools_packages["wps-office-cn"]="WPS Office suite (Chinese version)"
 tools_packages["ttf-wps-fonts"]="WPS Office fonts package"
 tools_packages["wps-office-mui-zh-cn"]="WPS Office multi-language support (Chinese)"
 tools_packages["vmware-workstation"]="Virtualization software for running multiple operating systems on a single PC"
+tools_packages["typora"]="copy"
+tools_packages["wemeet"]="wemeet"
+tools_packages["baidunetdisk-bin"]="baidunetdisk-bin"
 tools_packages["wl-clipboard"]="copy"
 
 declare -A hacktools_packages
@@ -93,16 +96,14 @@ init_actions=(
 
 # 命令数组
 actions=(
-    "sudo mv $HOME/hypr/.config $HOME/"
-    "sudo mv $HOME/hypr/etc/environment /etc/"
+    "sudo mv $PWD/.config/* $HOME/.config/"
+    "sudo ln -s $HOME/.config/hypr/starthypr.sh /usr/bin/hypr"
     "sudo rm -fr /etc/fonts"
-    "sudo mv $HOME/hypr/etc/fonts /etc/"
+    "sudo rm -fr /etc/environment"
+    "sudo mv $PWD/etc/fonts /etc/"
+    "sudo mv $PWD/etc/environment /etc/"
     "sudo systemctl enable v2raya.service"
     "sudo systemctl start v2raya.service"
-    "sudo systemctl enable bluetooth"
-    "sudo systemctl start bluetooth"
-    "sudo modprobe -a vmw_vmci vmmon"
-    "sudo ln -s $HOME/.config/hypr/start_hypr.sh /usr/bin/start_hypr"
 )
 
 logo() {
@@ -280,5 +281,7 @@ echo
 if [ "$choice" = "Y" ] || [ "$choice" = "y" ]; then
     install "tools" tools_packages
 fi
+
+do_actions "action" actions
 
 success "Script Finish!"
