@@ -104,6 +104,8 @@ actions=(
     "sudo ln -s $HOME/.config/hypr/starthypr.sh /usr/bin/hypr"
     "sudo rm -fr /etc/fonts"
     "sudo rm -fr /etc/environment"
+    "sudo mv $PWD/etc/usr/share/icons/Adwaita/symbolic/devices/input-keyboard-symbolic.svg /etc/usr/share/icons/Adwaita/symbolic/devices/"
+    "sudo mv $PWD/etc/usr/share/icons/hicolor/24x24/apps/org.fcitx.Fcitx5.fcitx-pinyin.png etc/usr/share/icons/hicolor/24x24/apps/"
     "sudo mv $PWD/etc/fonts /etc/"
     "sudo mv $PWD/etc/environment /etc/"
     "sudo systemctl enable v2raya.service"
