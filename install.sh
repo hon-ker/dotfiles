@@ -89,7 +89,11 @@ tools_packages["nmap"]="Nmap"
 
 # 初始化
 init_actions=(
+    "sudo rm -fr /etc/pacman.conf"
+    "sudo mv $PWD/etc/pacman.conf /etc/"
     "paru -S --noconfirm archlinuxcn-keyring"
+    "sudo pacman -Syy"
+    "paru -S --noconfirm blackarch-keyring"
     "sudo pacman -Syy"
 )
 
