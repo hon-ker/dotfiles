@@ -17,7 +17,7 @@
 
 
 
-我对Hyprland的评价是:  **Hyprland,满足你对窗口管理器的所有期待(除却输入法)**
+我对Hyprland的评价是:  **Hyprland,满足你对窗口管理器的所有期待**
 
 
 # Usage
